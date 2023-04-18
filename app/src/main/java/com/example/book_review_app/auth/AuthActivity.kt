@@ -3,6 +3,7 @@ package com.example.book_review_app.auth
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 open class AuthActivity : AppCompatActivity() {
@@ -15,11 +16,17 @@ open class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
+    // This method should be overridden only in SignUpActivity
     protected open fun signUp(email: String, password: String) {
-        // TODO
+        throw java.lang.UnsupportedOperationException("signUp function must not be called from ${this.javaClass.simpleName}")
     }
 
+    // This method should be overridden  only in SignUpActivity
     protected open fun signIn(email: String, password: String) {
-        // TODO
+        throw java.lang.UnsupportedOperationException("signIn function must not be called from ${this.javaClass.simpleName}")
+    }
+
+    protected fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
