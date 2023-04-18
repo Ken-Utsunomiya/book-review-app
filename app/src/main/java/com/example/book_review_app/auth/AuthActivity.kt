@@ -21,7 +21,7 @@ open class AuthActivity : AppCompatActivity() {
         throw java.lang.UnsupportedOperationException("signUp function must not be called from ${this.javaClass.simpleName}")
     }
 
-    // This method should be overridden  only in SignUpActivity
+    // This method should be overridden only in SignUpActivity
     protected open fun signIn(email: String, password: String) {
         throw java.lang.UnsupportedOperationException("signIn function must not be called from ${this.javaClass.simpleName}")
     }
