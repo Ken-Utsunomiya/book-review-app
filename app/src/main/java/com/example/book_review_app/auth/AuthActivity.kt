@@ -9,7 +9,7 @@ import com.example.book_review_app.databinding.ActivityAuthBinding
 
 open class AuthActivity : AppCompatActivity() {
 
-    private val binding by lazy { ActivityAuthBinding.inflate(layoutInflater) }
+    protected val binding by lazy { ActivityAuthBinding.inflate(layoutInflater) }
     protected lateinit var emailEditText: EditText
     protected lateinit var passwordEditText: EditText
     protected lateinit var authButton: Button
@@ -18,6 +18,7 @@ open class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(binding.root)
+
         emailEditText = binding.emailEditText
         passwordEditText = binding.passwordEditText
         authButton = binding.authButton
