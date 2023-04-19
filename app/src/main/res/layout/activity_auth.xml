@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp"
-        android:text="@string/auth_signin_text"
+        android:text=""
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/auth_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/auth_signin_button_text"
+        android:text=""
         android:textSize="16sp"/>
 
 </LinearLayout>
