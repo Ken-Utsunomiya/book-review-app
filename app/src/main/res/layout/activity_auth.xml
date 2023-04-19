@@ -23,7 +23,9 @@
         android:layout_height="wrap_content"
         android:hint="@string/auth_email_hint"
         android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:autofillHints="emailAddress"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/password_edit_text"
@@ -31,12 +33,15 @@
         android:layout_height="wrap_content"
         android:hint="@string/auth_password_hint"
         android:inputType="textPassword"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="32dp"
+        android:autofillHints="password"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/auth_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/auth_signin_text"/>
+        android:text="@string/auth_signin_button_text"
+        android:textSize="16sp"/>
 
 </LinearLayout>
