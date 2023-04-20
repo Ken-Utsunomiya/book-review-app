@@ -14,5 +14,6 @@ class SignInActivity : AuthActivity() {
 
     override fun signIn(email: String, password: String) {
         print("Sign In")
+        showToast("Sign In Success!")
     }
 }

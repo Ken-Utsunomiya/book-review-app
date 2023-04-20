@@ -22,6 +22,18 @@ open class AuthActivity : AppCompatActivity() {
         emailEditText = binding.emailEditText
         passwordEditText = binding.passwordEditText
         authButton = binding.authButton
+
+        authButton.setOnClickListener {
+            val email = emailEditText.text.toString()
+            val pass = passwordEditText.text.toString()
+
+            if (this is SignInActivity) {
+                signIn(email, pass)
+            }
+            else {
+                throw ClassNotFoundException("unknown class ${this.javaClass.simpleName}")
+            }
+        }
     }
 
     // This method should be overridden only in SignUpActivity
