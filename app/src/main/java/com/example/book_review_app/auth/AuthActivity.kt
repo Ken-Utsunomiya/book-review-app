@@ -3,13 +3,15 @@ package com.example.book_review_app.auth
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.book_review_app.databinding.ActivityAuthBinding
 
 open class AuthActivity : AppCompatActivity() {
 
-    protected val binding by lazy { ActivityAuthBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityAuthBinding.inflate(layoutInflater) }
+    protected lateinit var authTypeText: TextView
     protected lateinit var emailEditText: EditText
     protected lateinit var passwordEditText: EditText
     protected lateinit var authButton: Button
@@ -19,21 +21,10 @@ open class AuthActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        authTypeText = binding.authTypeText
         emailEditText = binding.emailEditText
         passwordEditText = binding.passwordEditText
         authButton = binding.authButton
-
-        authButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val pass = passwordEditText.text.toString()
-
-            if (this is SignInActivity) {
-                signIn(email, pass)
-            }
-            else {
-                throw ClassNotFoundException("unknown class ${this.javaClass.simpleName}")
-            }
-        }
     }
 
     // This method should be overridden only in SignUpActivity
