@@ -5,9 +5,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RetrofitClient {
-    private val baseUrl = BuildConfig.BASE_URL
-    val retrofit = Retrofit.Builder()
-        .baseUrl(baseUrl)
+    val retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
 }

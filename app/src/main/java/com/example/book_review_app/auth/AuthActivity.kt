@@ -8,10 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.book_review_app.databinding.ActivityAuthBinding
 
-open class AuthActivity : AppCompatActivity() {
+abstract class AuthActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityAuthBinding.inflate(layoutInflater) }
     protected lateinit var authTypeText: TextView
+    protected lateinit var nameEditText: EditText
     protected lateinit var emailEditText: EditText
     protected lateinit var passwordEditText: EditText
     protected lateinit var authButton: Button
@@ -22,19 +23,22 @@ open class AuthActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         authTypeText = binding.authTypeText
+        nameEditText = binding.nameEditText
         emailEditText = binding.emailEditText
         passwordEditText = binding.passwordEditText
         authButton = binding.authButton
     }
 
-    // This method should be overridden only in SignUpActivity
-    protected open fun signUp(email: String, password: String) {
-        throw java.lang.UnsupportedOperationException("signUp function must not be called from ${this.javaClass.simpleName}")
+    protected fun isValidName(name: String) : Boolean {
+        return name != ""
     }
 
-    // This method should be overridden only in SignUpActivity
-    protected open fun signIn(email: String, password: String) {
-        throw java.lang.UnsupportedOperationException("signIn function must not be called from ${this.javaClass.simpleName}")
+    protected fun isValidEmail(email: String) : Boolean {
+        return email != ""
+    }
+
+    protected fun isValidPassword(password: String) : Boolean {
+        return password != ""
     }
 
     protected fun showToast(message: String) {

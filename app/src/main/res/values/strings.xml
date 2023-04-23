@@ -14,4 +14,5 @@
     <string name="auth_password_hint">Password</string>
     <string name="auth_signin_button_text">SIGN IN</string>
     <string name="auth_signup_button_text">SIGN UP</string>
+    <string name="auth_name_hint">Name</string>
 </resources>
