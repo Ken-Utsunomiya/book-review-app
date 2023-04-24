@@ -2,6 +2,7 @@ package com.example.book_review_app.service
 
 import com.example.book_review_app.model.*
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -11,7 +12,7 @@ interface UserService {
     fun getUser(): Call<GetUserRes>
 
     @POST("/users")
-    fun signUpUser(req: SignUpReq): Call<SignUpRes>
+    fun signUpUser(@Body req: SignUpReq): Call<SignUpRes>
 
     @POST("/signin")
     fun signInUser(req: SignInReq): Call<SignInRes>

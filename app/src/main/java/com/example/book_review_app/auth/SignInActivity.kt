@@ -12,14 +12,21 @@ class SignInActivity : AuthActivity() {
         authTypeText.text = getString(R.string.auth_signin_text)
         authButton.text = getString(R.string.auth_signin_button_text)
 
+        val binding =
+
+
         authButton.setOnClickListener {
             val email = emailEditText.text.toString()
-            val pass = passwordEditText.text.toString()
-            signIn(email, pass)
+            val password = passwordEditText.text.toString()
+            if (isValidEmail(email) && isValidPassword(password)) {
+                signIn(email, password)
+            } else {
+                showToast("Invalid input")
+            }
         }
     }
 
-    override fun signIn(email: String, password: String) {
+    private fun signIn(email: String, password: String) {
         Log.d("Authentication", "Sign In")
         showToast("Sign In Success!")
     }

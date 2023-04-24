@@ -24,6 +24,9 @@
         <activity android:name=".auth.AuthActivity" />
         <activity android:name=".auth.SignInActivity" />
         <activity android:name=".auth.SignUpActivity" />
+
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

@@ -32,7 +32,7 @@ class SignUpActivity : AuthActivity() {
         }
     }
 
-    fun signUp(name: String, email: String, password: String) {
+    private fun signUp(name: String, email: String, password: String) {
         Log.d("Authentication", "Sign Up")
 
         val userService = RetrofitClient.retrofit.create(UserService::class.java)
@@ -44,13 +44,18 @@ class SignUpActivity : AuthActivity() {
 
         userService.signUpUser(req).enqueue(object : Callback<SignUpRes> {
             override fun onResponse(call: Call<SignUpRes>, response: Response<SignUpRes>) {
-                // do something
+                if (response.isSuccessful) {
+                    Log.d("Authentication", "Sign Up succeeded")
+                } else {
+                    Log.d("Authentication", "Sign Up failed")
+                    Log.d("Authentication", response.errorBody().toString())
+                }
             }
 
             override fun onFailure(call: Call<SignUpRes>, t: Throwable) {
-                // do something
+                Log.d("Authentication", "Sign Up failed")
+                showToast("Sign Up failed. Try again.")
             }
         })
-        showToast("Sign Up Success!")
     }
 }
