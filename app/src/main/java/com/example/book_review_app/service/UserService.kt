@@ -15,7 +15,7 @@ interface UserService {
     fun signUpUser(@Body req: SignUpReq): Call<SignUpRes>
 
     @POST("/signin")
-    fun signInUser(req: SignInReq): Call<SignInRes>
+    fun signInUser(@Body req: SignInReq): Call<SignInRes>
 
     @PUT("/users")
     fun updateUser(req: UpdateUserReq): Call<UpdateUserRes>

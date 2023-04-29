@@ -46,6 +46,7 @@ class SignUpActivity : AuthActivity() {
             override fun onResponse(call: Call<SignUpRes>, response: Response<SignUpRes>) {
                 if (response.isSuccessful) {
                     Log.d("Authentication", "Sign Up succeeded")
+                    showToast("Sign Up Success")
                 } else {
                     Log.d("Authentication", "Sign Up failed")
                 }
