@@ -12,8 +12,6 @@ class SignInActivity : AuthActivity() {
         authTypeText.text = getString(R.string.auth_signin_text)
         authButton.text = getString(R.string.auth_signin_button_text)
 
-        val binding =
-
 
         authButton.setOnClickListener {
             val email = emailEditText.text.toString()
