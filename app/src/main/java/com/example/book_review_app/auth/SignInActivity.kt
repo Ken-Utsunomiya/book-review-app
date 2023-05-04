@@ -47,7 +47,7 @@ class SignInActivity : AuthActivity() {
                     Log.d("Authentication", "Sign In succeeded")
                     showToast("Sign In Success")
                 } else {
-                    Log.d("Authentication", "Sign In failed")
+                    Log.d("Authentication", "Sign In not completed")
                 }
             }
 
